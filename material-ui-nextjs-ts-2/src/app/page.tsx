@@ -10,6 +10,9 @@ import SearchAppBar from '@/components/SerachAppBar';
 import { Button } from '@mui/material';
 import {Card,CardContent,CardMedia,CardActionArea} from '@mui/material'
 import ActionAreaCard from '../components/ActionAreaCard';
+import Image from 'next/image';
+import Footer from '../components/Footer/Footer'
+import MovieCard from '../components/MovieCard/MovieCard'
 export default function Home() {
   return (
   /*  <Container maxWidth="xl">
@@ -23,29 +26,21 @@ export default function Home() {
       </Box>
     </Container>*/
     <>
-   <SearchAppBar></SearchAppBar>
+   <SearchAppBar/>
    <Container  sx={{ marginTop:2,padding:4, height: '100vh' }} >
     <Box>
-    <Card sx={{ maxWidth: 200 }} >
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="250"
-          image= "/images/sham-irani-1-poster-207x290.jpg"
-          alt="شام ایرانی"
-        />
-        <CardContent>
-          <Typography fontFamily={'Yekan'} variant="h6" component="div" align='center'>
-           سریال شام ایرانی 
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-       
+    <MovieCard/> 
     </Box>
     </Container>
+    {/* <Image 
+    alt='sham-irani'
+    src={"/images/sham-irani-1-poster-207x290.jpg"}
+    width={200}
+    height={200}
+
+    /> */}
+      
+      <Footer caption = "hello" version={2} />
      </>  
   );
 }

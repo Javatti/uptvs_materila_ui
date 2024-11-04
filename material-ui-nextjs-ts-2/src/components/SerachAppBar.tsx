@@ -12,6 +12,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import globalStyles from '../../public/globalyStyles';
 import DownloadIcon from '@mui/icons-material/Download'
 import { Button, ButtonGroup } from '@mui/material';
+import Image from 'next/image';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -30,14 +31,14 @@ const Search = styled('div')(({ theme }) => ({
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 9),
-  
+
   height: '100%',
   position: 'absolute',
   pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  
+
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -60,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: "#5c846a"}}>
+      <AppBar position="static" sx={{ background: "#0a0a0e" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -71,49 +72,34 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 0.01,
-                 display: { xs: 'none', sm: 'block' },
-                 mr: 2 ,
-                 fontFamily: 'IRANYekan' ,
-                 fontSize: 25 ,
-                 color : 'orange',
-                 
-                 }}
-          >
-           <b>تیوی</b> 
-          </Typography>
-         {/* khat baadi */}
-         <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1,
-                 display: { xs: 'none', sm: 'block' },
-                 mr: 1 ,
-                 fontFamily: 'IRANYekan' ,
-                 fontSize: 25 ,
-                 color : 'purple'
-                 }}
-          >
-           <b><i>کلاب</i></b> 
-          </Typography>
-          <ButtonGroup variant="text" aria-label="Basic button group" color="warning" onClick={() => alert("نداریم")} sx={{fontFamily:'IRANYekan'}}>     
-          <Button sx={{color:'inherit'}} >فیلم خارجی</Button>
-          <Button sx={{color:'inherit'}}>فیلم ایرانی</Button>
-          <Button sx={{color:'inherit'}}>سریال</Button>
-          <Button sx={{color:'inherit',marginLeft:1}}>انیمیشن</Button>
+          <Image
+            alt='up-tv'
+            src={"/images/logo.jpg"}
+            width={90}
+            height={55}
+
+          />
+          <ButtonGroup variant="text" aria-label="Basic button group"  onClick={() => alert("نداریم")} sx={{ fontFamily: 'IRANSans' }}>
+            <Button sx={{ color: 'inherit' }} >فیلم خارجی</Button>
+            <Button sx={{ color: 'inherit' }}>فیلم ایرانی</Button>
+            <Button sx={{ color: 'inherit' }}>سریال</Button>
+            <Button sx={{ color: 'inherit' }}>انیمیشن</Button>
+            <Button sx={{ color: 'inherit' }}>دوبله فارسی</Button>
+            <Button sx={{ color: 'inherit' }}>انیمه</Button>
+            <Button sx={{ color: 'inherit' }}>سایر</Button>
+            <Button sx={{ color: 'inherit' }}>استخدام</Button>
+            <Button sx={{ color: 'inherit'}}>ارتباط با ما</Button>
           </ButtonGroup>
-{/* m1,m18 */}
+          {/* m1,m18 */}
           <Search>
             <SearchIconWrapper>
-              <SearchIcon/>
+              <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="جستجو..."
+              
+              //TODO: code redesign 
+
+              placeholder="کلمه مورد نظر"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
