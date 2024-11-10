@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -9,10 +9,11 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import globalStyles from '../../public/globalyStyles';
+import globalStyles from '../../../public/globalyStyles';
 import DownloadIcon from '@mui/icons-material/Download'
 import { Button, ButtonGroup } from '@mui/material';
 import Image from 'next/image';
+import { Margin } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -68,18 +69,20 @@ export default function SearchAppBar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 1 }}
           >
             <MenuIcon />
           </IconButton>
           <Image
+            
             alt='up-tv'
             src={"/images/logo.jpg"}
-            width={90}
+            width={120}
             height={55}
+            
 
           />
-          <ButtonGroup variant="text" aria-label="Basic button group"  onClick={() => alert("نداریم")} sx={{ fontFamily: 'IRANSans' }}>
+          <ButtonGroup variant="text" aria-label="Basic button group"  onClick={() => alert("نداریم")} sx={{ fontFamily: 'IRANSans', marginRight:3 }}>
             <Button sx={{ color: 'inherit' }} >فیلم خارجی</Button>
             <Button sx={{ color: 'inherit' }}>فیلم ایرانی</Button>
             <Button sx={{ color: 'inherit' }}>سریال</Button>
