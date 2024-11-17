@@ -11,7 +11,7 @@ import * as React from "react";
 
 const MovieList: FC = () => {
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={2}>
       {
         Movies.map( (movie, index) => (
             <MovieCard

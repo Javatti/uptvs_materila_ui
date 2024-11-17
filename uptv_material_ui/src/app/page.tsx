@@ -14,15 +14,15 @@ import MovieList from '@/components/Footer/MovieList';
 import Image from 'next/image';
 import Footer from '../components/Footer/Footer'
 import MovieCard from '../components/MovieCard/MovieCard'
-
+import InputSearch from '@/components/Header/search';
 export default function Home() {
   return (
   
     <>
-   <SearchAppBar/>
-   <Container maxWidth="xl"/>
-   <MovieList/>
-   <Footer caption = "hello" version={2} />
+  <SearchAppBar/>
+  <Container maxWidth="xl"/>
+  <MovieList/> 
+   <Footer  caption = "jvd khdmi" version={2} />
      </>  
   );
 }

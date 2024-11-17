@@ -7,12 +7,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Grid2 from '@mui/material/Grid2';
 import Link from 'next/link'
 import {FC} from 'react';
 
 import {MovieType} from "@/Types/movie.type";
 
 import MovieDetailDialog from "@/components/MovieDetailDialog/MovieDetailDialog"
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 
 const MovieCard:FC<MovieType> = (movieData) => {
   
@@ -27,21 +30,23 @@ const MovieCard:FC<MovieType> = (movieData) => {
      <Link href= {`/movies/${_movieData.id}`}>
       <Card sx= {{ maxWidth: 345 }} onClick={handleClick}>
       <CardMedia
-        sx={{ height: 540 }}
+        sx={{ height: 350 ,}}
         image= {_movieData.image}
         title= {_movieData.title}
       />
       <CardContent sx={{margin:0}}>
-        <Typography sx={{margin: 0 , padding:0}} gutterBottom variant="h5" component="div" fontFamily={'IRANSans'}>
+        <Typography sx={{margin: 0 , padding:0 ,  textAlign:'center'}} gutterBottom variant="h5" component="div" fontFamily={'IRANSans'}>
         {_movieData.title}
         </Typography>
         
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        </Typography>
+        {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        </Typography> */}
       </CardContent>
       <CardActions>
-        <Button size="small" color ='warning'>افزودن به علاقه مندی ها</Button>
-        <Button size="small">بیشتر</Button>
+        <ButtonGroup>
+        <Button size="small" color ='warning' variant='contained' >افزودن به علاقه مندی ها</Button>
+        <Button size="small" color='success' variant='outlined'>بیشتر</Button>
+        </ButtonGroup>
       </CardActions>
     </Card>
     </Link>

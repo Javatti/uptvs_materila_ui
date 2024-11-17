@@ -1,3 +1,4 @@
+import { AlignHorizontalCenter } from '@mui/icons-material';
 import * as React from 'react';
 import {FC} from 'react';
 
@@ -9,7 +10,7 @@ const Footer: FC<OneProps> = (props:OneProps) =>{
 
     return(
         <footer>
-            <p>{props.caption}</p>
+            <p> {props.caption}</p>
             <p>version is {props.version}</p>
         </footer>
     )

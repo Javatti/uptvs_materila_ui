@@ -2,7 +2,8 @@ type MovieData = {
 
     id: number | string;
     "title": string;
-    "director": string;
+    "director": string,
+    "image": string,
     "release_year": number,
     "genre": string,
     "rating": number
